@@ -1,2 +1,2 @@
 # TimeXplusplus
-Submit the code of  TimeX++ to ICML2024
+Submit the code of TimeX++ to ICML2024
