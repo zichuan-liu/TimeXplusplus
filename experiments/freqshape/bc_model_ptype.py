@@ -113,10 +113,8 @@ def main(args):
                    "AUR": [],
                              }
     test_range =  range(1, 6)
-    # if args.lstm or args.cnn:
-    #     test_range =  [4]
     for i in test_range:
-        D = process_Synth(split_no = i, device = device, base_path = '/TimeX/datasets/FreqShape/')
+        D = process_Synth(split_no = i, device = device, base_path = '../../datasets/FreqShape/')
 
         dset = DatasetwInds(D['train_loader'].X.to(device), D['train_loader'].times.to(device), D['train_loader'].y.to(device))
         train_loader = torch.utils.data.DataLoader(dset, batch_size = 64, shuffle = True)
@@ -173,10 +171,8 @@ def main(args):
         if args.lstm or args.cnn:
             optimizer = torch.optim.AdamW(model.parameters(), lr = 5e-3, weight_decay = 0.001)
         else:
-            if is_timex:
-                optimizer = torch.optim.AdamW(model.parameters(), lr = 1e-3, weight_decay = 0.001)
-            else:
-                optimizer = torch.optim.AdamW(model.parameters(), lr = 1e-3, weight_decay = 0.001)
+            optimizer = torch.optim.AdamW(model.parameters(), lr = 1e-3, weight_decay = 0.001)
+
 
         model_suffix = naming_convention(args)
         spath = os.path.join('models', model_suffix)
@@ -293,3 +289,9 @@ if __name__ == '__main__':
 
     main(args)
 
+"""
+Saliency AUROC: = 0.9422 +- 0.0012
+Saliency AUPRC: = 0.8905 +- 0.0018
+Saliency AUP: = 0.7805 +- 0.0014
+Saliency AUR: = 0.6618 +- 0.0019
+"""
