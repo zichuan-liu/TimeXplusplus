@@ -1,4 +1,3 @@
-datasets/*
 txai.egg-info
 **/__pycache__/
 *.pt
@@ -9,3 +8,4 @@ txai.egg-info
 *.err
 *.out
 experiments/*/models/
+!experiments/freqshape/models
