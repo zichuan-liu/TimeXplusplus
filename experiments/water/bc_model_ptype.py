@@ -236,28 +236,6 @@ def main(args):
 
         f1, out = eval_mv4(test, model, masked=True)
         print('Test F1: {:.4f}'.format(f1))
-    #     f1, _, results_dict = eval_mv4(test, model, gt_exps=gt_exps)
-
-    #     for k, v in results_dict.items():
-    #         print(k)
-    #         if k not in "generated_exps" and k not in "gt_exps":
-    #             print('\t{} \t = {:.4f} +- {:.4f}'.format(k, np.mean(v), np.std(v) / np.sqrt(len(v))))
-    #     print('Test F1: {:.4f}'.format(f1))
-
-    #     generated_exps = results_dict["generated_exps"]
-    #     gt_exps = results_dict["gt_exps"]
-    #     resutlt_cur = print_results(generated_exps, gt_exps)
-    #     all_results["AUROC"] += resutlt_cur["AUROC"]
-    #     all_results["AUPRC"] += resutlt_cur["AUPRC"]
-    #     all_results["AUP"] += resutlt_cur["AUP"]
-    #     all_results["AUR"] += resutlt_cur["AUR"]
-    # all_aupoc, all_auprc, all_aup, all_aur = all_results["AUROC"], all_results["AUPRC"], all_results["AUP"], all_results["AUR"]
-    # print('============================================================================================')
-    # print('Saliency AUROC: = {:.4f} +- {:.4f}'.format(np.mean(all_aupoc), np.std(all_aupoc) / np.sqrt(len(all_aupoc))))
-    # print('Saliency AUPRC: = {:.4f} +- {:.4f}'.format(np.mean(all_auprc), np.std(all_auprc) / np.sqrt(len(all_auprc))))
-    # print('Saliency AUP: = {:.4f} +- {:.4f}'.format(np.mean(all_aup), np.std(all_aup) / np.sqrt(len(all_aup))))
-    # print('Saliency AUR: = {:.4f} +- {:.4f}'.format(np.mean(all_aur), np.std(all_aur) / np.sqrt(len(all_aur))))
-
 
         
         fig, ax = plt.subplots(1, 2, sharex = True, squeeze = False)
@@ -342,57 +320,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(args)
-
-
-"""
-
-Epoch: 96: Sparsity = 0.5245     Exp Loss = [0.05652495]         Clf Loss = 0.0775       CL Loss = ['1.3769', '0.0007']
-Epoch: 97: Sparsity = 0.5241     Exp Loss = [0.05267864]         Clf Loss = 0.0736       CL Loss = ['1.3704', '0.0010']
-Epoch: 98: Sparsity = 0.5249     Exp Loss = [0.05403077]         Clf Loss = 0.0788       CL Loss = ['1.3746', '0.0006']
-Epoch: 99: Sparsity = 0.5249     Exp Loss = [0.05227179]         Clf Loss = 0.0761       CL Loss = ['1.3851', '0.0019']
-Epoch 100, Val F1 = 0.9900, Val Sparsity = 0.5215
-Best Epoch: 18   Val F1 = -0.3333
-torch.Size([200, 1000, 2]) torch.Size([200, 1000, 2])
-auprc
-        auprc    = 0.9079 +- 0.0054
-aup
-        aup      = 0.5999 +- 0.0049
-aur
-        aur      = 0.9044 +- 0.0036
-generated_exps
-
-
-
-Epoch: 96: Sparsity = 0.5866     Exp Loss = [0.03644792]         Clf Loss = 0.0151       CL Loss = 0.4408
-Epoch: 97: Sparsity = 0.5859     Exp Loss = [0.03656505]         Clf Loss = 0.0142       CL Loss = 0.4399
-Epoch: 98: Sparsity = 0.5861     Exp Loss = [0.03563251]         Clf Loss = 0.0148       CL Loss = 0.4399
-Epoch: 99: Sparsity = 0.5864     Exp Loss = [0.03635648]         Clf Loss = 0.0150       CL Loss = 0.4388
-Epoch 100, Val F1 = 0.9900, Val Sparsity = 0.5822
-Best Epoch: 30   Val F1 = -0.4449
-torch.Size([200, 1000, 2]) torch.Size([200, 1000, 2])
-auprc
-        auprc    = 0.9483 +- 0.0035
-aup
-        aup      = 0.7440 +- 0.0037
-aur
-        aur      = 0.8048 +- 0.0028
-generated_exps
-
-
-
-
-
-# his:
-Saliency AUROC: = 0.9861 +- 0.0007
-Saliency AUPRC: = 0.8743 +- 0.0026
-Saliency AUP: = 0.6027 +- 0.0021
-Saliency AUR: = 0.9336 +- 0.0016
-
-
-kl is 0.1
-Saliency AUROC: = 0.9867 +- 0.0007
-Saliency AUPRC: = 0.9370 +- 0.0019
-Saliency AUP: = 0.8018 +- 0.0019
-Saliency AUR: = 0.8215 +- 0.0019
-
-"""
