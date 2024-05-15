@@ -1,6 +1,5 @@
 txai.egg-info
 **/__pycache__/
-*.pt
 *.pkl
 .vscode
 .ipynb_checkpoints
