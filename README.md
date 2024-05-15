@@ -44,16 +44,16 @@ A simple example is given for the freqshape dataset in experiments/freqshape/bc_
 python bc_model_ptype.py
 ```
 
-**Reproducibility**:
+**Reproducibility**: For each dataset script, first modify the `base_path` to correspond to your directory.
 
-1. **Training the black-box model $f$**: Scripts used to train black-box models are included in `experiments/<dataset>/train_transformer.py`. Within these scripts, you can change hyperparameter choices and see usage for setting up the model, training function, loss functions, and more, more detail see Table 7 in the papar. 
+1. **Training the black-box model $f$**: Scripts used to train black-box models are included in `experiments/<dataset>/train_transformer.py`. Within these scripts, you can change hyperparameter choices and see usage for setting up the model, training parameters, and more, more detail see Table 7 in the papar. 
 
 
 2. **Training TimeX++ to explain $f$**: Before training, please replace the path to the trained time series predictor that you wish to explain. Then, run:
 ```shell
 python bc_model_ptype.py
 ```
-Parameters can also be modified to train ablation models (please see the paper for more details). For baseline TimeX, you can be reproduced by modifying `is_timex=True` at the beginning of `bc_model_ptype.py`, otherwise, ours is `is_timex=False`.
+Parameters can also be modified to train ablation models (please see the paper for more details). For baseline TimeX, you can be reproduced by modifying `is_timex=True` at the beginning of `bc_model_ptype.py`, otherwise, ours is `is_timex=False`. For evaluation and baseline, please refer to this [url](https://github.com/mims-harvard/TimeX/blob/main/reproducibility.md).
 
 
 **Locations of important implementations**: The TimeX++ can be found in `txai/models/bc_model.py` under the name TimeXModel. 
