@@ -1,6 +1,6 @@
 # <p align=center> `TimeX++: Learning Time-Series Explanations with Information Bottleneck`</p>
 
-**Accepted ICML 2024** [[paper]](https://xxxxxx) [[code]](https://github.com/zichuan-liu/TimeXplusplus) 
+**Accepted ICML 2024** [[paper]](https://arxiv.org/abs/2405.09308) [[code]](https://github.com/zichuan-liu/TimeXplusplus) 
 
 This repository is the official PyTorch Implementation of TimeX++. Our experiments are based on [TimeX](https://github.com/mims-harvard/TimeX), and thanks to the all original authors! 
 
