@@ -46,7 +46,7 @@ python bc_model_ptype.py
 
 **Reproducibility**: For each dataset script, first modify the `base_path` to correspond to your directory.
 
-1. **Training the black-box model $f$**: Scripts used to train black-box models are included in `experiments/<dataset>/train_transformer.py`. Within these scripts, you can change hyperparameter choices and see usage for setting up the model, training parameters, and more detail please see Table 7 in the paper. 
+1. **Training the black-box model $f$**: Scripts used to train black-box models are included in `experiments/<dataset>/train_transformer.py`. Within these scripts, you can change hyperparameter choices and see usage for setting up the model, training parameters, and more detail please see Table 7 in the papar. 
 
 
 2. **Training TimeX++ to explain $f$**: Before training, please replace the path to the trained time series predictor that you wish to explain. Then, run:
