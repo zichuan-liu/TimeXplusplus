@@ -183,3 +183,4 @@ widgetsnbextension==4.0.5
 yacs==0.1.8
 yarg==0.1.9
 zipp==3.8.1
+time_interpret
