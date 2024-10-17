@@ -41,7 +41,12 @@ Requirements are found in `requirements.txt`. Please install the necessary requi
 A simple example is given for the freqshape dataset in `experiments/freqshape/bc_model_ptype.py`.
 
 ```shell
+pip install -r requirements.txt
+cd timesynth-0.2.4/
+pip install .
+cd ../experiments/freqshape/
 python bc_model_ptype.py
+
 ```
 
 **Reproducibility**: For each dataset script, first modify the `base_path` to correspond to your directory.
