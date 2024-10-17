@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Add the parent directory of TimeXplusplus to the sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+
 import torch
 import argparse, os
 from sklearn import metrics

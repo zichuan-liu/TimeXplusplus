@@ -40,7 +40,13 @@ Requirements are found in `requirements.txt`. Please install the necessary requi
 **Example**: Detailed examples of the model are given in the experiment scripts found in `experiments` directory. 
 A simple example is given for the freqshape dataset in `experiments/freqshape/bc_model_ptype.py`.
 
+Python version 3.12.6
+
 ```shell
+pip install -r requirements.txt
+cd timesynth-0.2.4/
+pip install .
+cd ../experiments/freqshape/
 python bc_model_ptype.py
 ```
 
