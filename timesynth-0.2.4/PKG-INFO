@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: timesynth
+Version: 0.2.4
+Summary: Library for creating synthetic time series
+Home-page: https://github.com/TimeSynth/TimeSynth
+Author: Abhishek Malali, Reinier Maat, Pavlos Protopapas
+Author-email: anon@anon.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
