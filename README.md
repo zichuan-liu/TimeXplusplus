@@ -46,7 +46,9 @@ Python version 3.12.6
 pip install -r requirements.txt
 cd timesynth-0.2.4/
 pip install .
-cd ../experiments/freqshape/
+cd ..
+python -m pip install -e .
+cd ./experiments/freqshape/
 python bc_model_ptype.py
 ```
 
