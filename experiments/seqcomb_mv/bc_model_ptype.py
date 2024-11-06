@@ -118,9 +118,9 @@ def main(args):
                              }
 
     for i in range(1, 6):
-        if (i == 2):
-            continue
-        D = process_Synth(split_no = i, device = device, base_path = '/TimeX/datasets/SeqCombMV2')
+        # if (i == 2):
+        #     continue
+        D = process_Synth(split_no = i, device = device, base_path = '../../datasets/SeqCombMV2')
         dset = DatasetwInds(D['train_loader'].X.to(device), D['train_loader'].times.to(device), D['train_loader'].y.to(device))
         train_loader = torch.utils.data.DataLoader(dset, batch_size = 64, shuffle = True)
 
@@ -188,27 +188,27 @@ def main(args):
         spath = spath.format(i)
         print('saving at', spath)
 
-        # best_model = train_mv6_consistency(
-        #     model,
-        #     optimizer = optimizer,
-        #     train_loader = train_loader,
-        #     clf_criterion = clf_criterion,
-        #     sim_criterion = sim_criterion,
-        #     beta_exp = 2.0,
-        #     beta_sim = 1.0,
-        #     lam_label = 1.0,
-        #     val_tuple = val, 
-        #     num_epochs = 100,
-        #     save_path = spath,
-        #     train_tuple = (D['train_loader'].X, D['train_loader'].times, D['train_loader'].y),
-        #     early_stopping = True,
-        #     selection_criterion = selection_criterion,
-        #     label_matching = label_matching,
-        #     embedding_matching = embedding_matching,
-        #     use_scheduler = False,
-        #     clip_norm = False,
-        #     **sc_expand_args
-        # )
+        best_model = train_mv6_consistency(
+            model,
+            optimizer = optimizer,
+            train_loader = train_loader,
+            clf_criterion = clf_criterion,
+            sim_criterion = sim_criterion,
+            beta_exp = 2.0,
+            beta_sim = 1.0,
+            lam_label = 1.0,
+            val_tuple = val, 
+            num_epochs = 100,
+            save_path = spath,
+            train_tuple = (D['train_loader'].X, D['train_loader'].times, D['train_loader'].y),
+            early_stopping = True,
+            selection_criterion = selection_criterion,
+            label_matching = label_matching,
+            embedding_matching = embedding_matching,
+            use_scheduler = False,
+            clip_norm = False,
+            **sc_expand_args
+        )
 
         sdict, config = torch.load(spath)
 
@@ -313,14 +313,6 @@ if __name__ == '__main__':
 
 
 """
-============================================================================================
-Saliency AUROC: = 0.8899 +- 0.0011
-Saliency AUPRC: = 0.7484 +- 0.0016
-Saliency AUP: = 0.8694 +- 0.0008
-Saliency AUR: = 0.3931 +- 0.0013
-
-
-
 lstm:
 Saliency AUROC: = 0.6824 +- 0.0025
 Saliency AUPRC: = 0.4052 +- 0.0038
